@@ -85,7 +85,7 @@ class Repository
         $logOutput = $log->getOutput();
         $logCount = count($logOutput);
 
-        foreach($log->getOutput() as $line){
+        foreach($logOutput as $line){
 
             $lineCount++;
 
@@ -98,7 +98,6 @@ class Repository
                 if (! empty($commit)){
                     array_push($commits, $commit);
                     unset($commit);
-                    continue;
                 }
 
                 $commit['hash'] = trim(substr($line, strlen('commit')));

@@ -33,7 +33,7 @@ class RepositoryTest extends TestCase
         $skip = 1;
         $limit = 10;
 
-        $commandOutput = [
+        $commandOutput = array(
             'commit 6aa799ad94dd24eafa997db7a4c2de28b43d4fcb',
             'Author: Scott Robertson <scottrobertson@users.noreply.github.com>',
             'Date:   Wed Sep 25 15:39:32 2013 +0100',
@@ -42,7 +42,7 @@ class RepositoryTest extends TestCase
             'Author: Scott Robertson <scottrobertson@users.noreply.github.com>',
             'Date:   Wed Sep 25 15:42:31 2013 +0100',
             'Update LICENCE'
-        ];
+        );
 
         $command = \Mockery::mock('\ScottRobertson\Git\Command')
             ->shouldReceive('getOutput')
@@ -77,20 +77,20 @@ class RepositoryTest extends TestCase
 
         $commits = $repository->getCommits($branch, $limit, $skip);
 
-        $expected = [
-            [
+        $expected = array(
+            array(
                 'hash' => '6aa799ad94dd24eafa997db7a4c2de28b43d4fcb',
                 'author' => 'Scott Robertson <scottrobertson@users.noreply.github.com>',
                 'date' => 'Wed Sep 25 15:39:32 2013 +0100',
                 'message' => 'Update README.md',
-            ],
-            [
+            ),
+            array(
                 'hash' => 'fb7008893e1314aaadc5927ef85b133dc1d512b8',
                 'author' => 'Scott Robertson <scottrobertson@users.noreply.github.com>',
                 'date' => 'Wed Sep 25 15:42:31 2013 +0100',
                 'message' => 'Update LICENCE',
-            ]
-        ];
+            )
+        );
 
         $this->assertEquals($expected, $commits);
     }
@@ -129,11 +129,11 @@ class RepositoryTest extends TestCase
         $remote = 'git@github.com:scottrobertson/php-git.git';
         $path = __DIR__;
 
-        $commandOutput = [
+        $commandOutput = array(
             '* master',
             'develop',
             'feature/awesome'
-        ];
+        );
 
         $command = \Mockery::mock('\ScottRobertson\Git\Command')
             ->shouldReceive('getOutput')
@@ -161,13 +161,12 @@ class RepositoryTest extends TestCase
 
         $branches = $repository->getBranches();
 
-        $expected = [
+        $expected = array(
             'master',
             'develop',
             'feature/awesome'
-        ];
+        );
 
         $this->assertEquals($expected, $branches);
     }
 }
-

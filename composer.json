@@ -1,0 +1,24 @@
+{
+    "name": "scottrobertson/git",
+    "type": "library",
+    "description": "Simple Git wrapper in PHP",
+    "keywords": ["git"],
+    "homepage": "http://github.com/scottrobertson/php-git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Scott Robertson",
+            "email": "scottymeuk@gmail.com",
+            "homepage": "http://scottrobertson.me",
+            "role": "Developer"
+        }
+    ],
+    "require" : {
+        "php": ">=5.3.3"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "" : ["src", "tests"]
+        }
+    }
+}

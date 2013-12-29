@@ -25,8 +25,7 @@ class Repository
     public function __construct(
         \ScottRobertson\Git\Command $command,
         $remote
-    )
-    {
+    ) {
         $this->remote = $remote;
         $this->command = $command;
 
@@ -85,7 +84,7 @@ class Repository
         $logOutput = $log->getOutput();
         $logCount = count($logOutput);
 
-        foreach($logOutput as $line){
+        foreach ($logOutput as $line) {
 
             $lineCount++;
 
@@ -95,7 +94,7 @@ class Repository
                     $commit['message'] = (isset($commit['message']) ?: null) . trim($line);
                 }
 
-                if (! empty($commit)){
+                if (! empty($commit)) {
                     array_push($commits, $commit);
                     unset($commit);
                 }

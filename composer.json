@@ -16,6 +16,9 @@
     "require" : {
         "php": ">=5.3.3"
     },
+    "require-dev" : {
+        "mockery/mockery": "~0.8"
+    },
     "autoload" : {
         "psr-0" : {
             "" : ["src", "tests"]

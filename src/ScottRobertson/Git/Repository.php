@@ -123,8 +123,8 @@ class Repository
     {
         return $this->command->execute(
             sprintf(
-                'fetch %s -p',
-                ($all ? '--all --tags' : null)
+                'fetch%s -p',
+                ($all ? ' --all --tags' : null)
             )
         );
     }

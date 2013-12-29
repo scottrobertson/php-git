@@ -79,7 +79,7 @@ class Repository
         );
 
         $lineCount = 0;
-        $commits = [];
+        $commits = array();
 
         $logOutput = $log->getOutput();
         $logCount = count($logOutput);

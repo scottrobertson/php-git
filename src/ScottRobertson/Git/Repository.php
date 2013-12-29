@@ -92,7 +92,7 @@ class Repository
             if ($lineCount === $logCount || strpos($line, 'commit') === 0) {
 
                 if (strpos($line, 'commit') !== 0) {
-                    $commit['message'] .= trim($line);
+                    $commit['message'] = (isset($commit['message']) ?: null) . trim($line);
                 }
 
                 if (! empty($commit)){
@@ -106,7 +106,7 @@ class Repository
             } elseif (strpos($line, 'Date') ===0) {
                 $commit['date'] = trim(substr($line, strlen('Date:')));
             } else {
-                $commit['message'] .= trim($line);
+                $commit['message'] = (isset($commit['message']) ?: null) . trim($line);
             }
         }
 

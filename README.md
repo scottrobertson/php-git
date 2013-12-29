@@ -1,6 +1,8 @@
 Git PHP Wrapper
 =======
 
+[![Build Status](https://travis-ci.org/scottrobertson/php-git.png?branch=master)](https://travis-ci.org/scottrobertson/php-git)
+
 This is a very simple PHP wrapper for Git. It contains a limited set of functionality right now, and things will be added as I (and others) need them.
 
 
